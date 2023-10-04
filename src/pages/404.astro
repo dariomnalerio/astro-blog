@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { notFoundGifURL } from "../config/index";
+---
+
+<Layout title="404 Not Found">
+  <div class="h-[80vh] flex flex-col items-center place-content-center">
+    <h1 class="text-4xl font-bold mb-2 tracking-wider">404</h1>
+    <p class="text-xl font-medium mb-8">Page not found</p>
+    <img src={notFoundGifURL} alt="Not Found GIF" class="min-w-1/2" />
+  </div>
+</Layout>

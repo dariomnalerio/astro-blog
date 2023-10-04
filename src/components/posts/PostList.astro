@@ -1,0 +1,21 @@
+---
+import PostSummary from "./PostSummary.astro";
+import type { PostSummary as PostSummaryProps } from "../../types/posts";
+
+
+const { posts, tagTitle } = Astro.props;
+---
+
+<section class="md:max-w-[70%] w-full md:mr-20">
+  <h3 class="mb-3 text-slate-100 font-semibold text-lg">{tagTitle} related articles</h3>
+  {
+    posts.map((post: PostSummaryProps) => (
+      <PostSummary
+        title={post.title}
+        pubDate={post.pubDate}
+        image={post.image}
+        fileName={post.fileName}
+      />
+    ))
+  }
+</section>

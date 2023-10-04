@@ -1,0 +1,29 @@
+---
+import { FormatDate } from "../../utils/date";
+import type { PostSummary as Props } from "../../types/posts.ts";
+
+const { title, pubDate, image, fileName } = Astro.props;
+
+const date = new Date(pubDate);
+const formattedDate = FormatDate(date);
+---
+
+<div class="group hover:opacity-90 hover:bg-gray-600 rounded-md px-3 py-2 mt-3">
+  <a href=`/en/post/${fileName}`>
+    <div class="flex gap-4" transition:name={fileName + pubDate}>
+      <img
+        src={image.url}
+        alt={image.alt}
+        class="w-12 h-12 group-hover:scale-110 group-hover:transition-transform group-hover:duration-500"
+      />
+      <div>
+        <h2
+          class="font-semibold text-lg tracking-wide group-hover:text-slate-200"
+        >
+          {title}
+        </h2>
+        <time datetime={pubDate} class="text-xs">{formattedDate}</time>
+      </div>
+    </div>
+  </a>
+</div>

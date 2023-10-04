@@ -1,0 +1,35 @@
+---
+import GithubIcon from "../components/ui/icons/GithubIcon.astro";
+import LinkedinIcon from "./ui/icons/LinkedinIcon.astro";
+---
+
+<header class="mx-10 md:mx-32 xl:mx-52 2xl:mx-80">
+  <nav class="flex justify-between py-4">
+    <!-- Logo and home button -->
+    <a
+      href="/"
+      class="text-lg md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo"
+    >
+      Home
+    </a>
+    <!-- Links and socials -->
+    <div class="flex gap-3 md:gap-10">
+      <a
+        href="/en/about/"
+        class="text-slate-300 hover:scale-110 hover:duration-150 hover:text-slate-200 tracking-[1px] mt-1"
+        >About</a
+      >
+
+      <div class="flex gap-3 md:gap-8 items-center">
+        <GithubIcon />
+        <LinkedinIcon />
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .logo {
+    font-family: 'Orelega One';
+  }
+</style>

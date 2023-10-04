@@ -1,0 +1,37 @@
+---
+import PostSuggestionsList from "../../components/posts/PostSuggestionsList.astro";
+import Layout from "../../layouts/Layout.astro";
+import type { Post } from "../../types/posts";
+const title = "About Me | Dario Nalerio";
+
+// Get all posts for suggestions
+const posts = await Astro.glob("../../pages/en/post/*.md");
+const allFrontmatters = posts.map((post) => post.frontmatter);
+---
+
+<Layout title={title}>
+  <h1 class="my-10 text-xl font-medium">About Me</h1>
+
+  <div
+    class="flex flex-col gap-4 md:max-w-[90%] lg:max-w-[80] xl:max-w-[70%] text-slate-200 tracking-wide leading-loose"
+  >
+    <p>
+      Hi there! I'm Dario, a software developer from Uruguay, experienced in
+      working on projects spanning both the front-end and back-end aspects of
+      web applications. I mostly work with TypeScript, but love to dwell into
+      other languages and tools.
+    </p>
+
+    <p>
+      In this blog, I'll be sharing my thoughts on software development, things
+      I learn along the way, as well as anything that piques my interest in the
+      realm of technology and development .
+    </p>
+
+    <p>Feel free to read some of my latest articles:</p>
+  </div>
+
+  <div class="mt-20">
+    <PostSuggestionsList allFrontmatters={allFrontmatters as Post[]} />
+  </div>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import type { TagObject as Props } from "../../types/tags.ts";
+
+const {
+  tag: {
+    tag,
+    name,
+    image: { url, alt },
+  },
+} = Astro.props;
+
+// Get the current tag from the URL and check if it matches the current tag
+const isActive = Astro.url.pathname.includes(tag);
+// If the tag is active, set the border and text to sky-700, otherwise set it to slate-300
+const isActiveBorder = isActive ? "border-sky-700" : "border-slate-300";
+const isActiveText = isActive ? "text-sky-700" : "text-slate-300";
+---
+
+<li
+  class={`group py-2 px-4 w-fit border-2 hover:border-sky-700 rounded-full ${isActiveBorder}`}
+>
+  <a href=`/en/tag/${tag}`>
+    <div class="flex gap-2 justify-center">
+      <img src={url} alt={alt} class="w-6 h-6" />
+      <h4 class={`font-medium group-hover:text-sky-700 ${isActiveText}`}>
+        {name}
+      </h4>
+    </div>
+  </a>
+</li>

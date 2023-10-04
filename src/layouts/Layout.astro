@@ -1,0 +1,32 @@
+---
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import "@fontsource-variable/montserrat";
+import '@fontsource/orelega-one';
+import {ViewTransitions} from "astro:transitions";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-gradient-to-l from-[#20252C] to-[#20252D] text-slate-200">
+    <div class="flex flex-col min-h-screen">
+      <Navigation />
+      <main class="mx-10 md:mx-20 xl:mx-52 2xl:mx-80 flex-1">
+        <slot />
+        <!-- children content -->
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

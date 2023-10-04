@@ -1,0 +1,58 @@
+---
+import type { Post } from "../../types/posts";
+import PostSuggestion from "./PostSuggestion.astro";
+interface Props {
+  currentFrontmatter?: Post;
+  allFrontmatters: Post[];
+}
+const { currentFrontmatter, allFrontmatters } = Astro.props;
+
+// Sort the allFrontmatters by pubDate in descending order (newest first)
+allFrontmatters.sort(
+  (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+);
+
+// Filter allFrontmatters by tags that are in currentFrontmatter
+const relatedFrontmatters = currentFrontmatter
+  ? allFrontmatters.filter((frontmatter) =>
+      frontmatter.tags.some((tag: string) =>
+        currentFrontmatter.tags.includes(tag)
+      )
+    )
+  : [];
+// If currentFormatter tag is in relatedFrontmatters remove it from the list
+const relatedFrontmattersWithoutCurrent = relatedFrontmatters.filter(
+  (frontmatter) => frontmatter.title !== currentFrontmatter!.title
+);
+
+// if relatedFrontmattersWithoutCurrent is shorter than 2
+// add new posts from allFrontmatters to the list
+if (relatedFrontmattersWithoutCurrent.length < 2) {
+  allFrontmatters.forEach((frontmatter) => {
+    if (
+      !relatedFrontmattersWithoutCurrent.some(
+        (relatedFrontmatter) => relatedFrontmatter.title === frontmatter.title
+      )
+    ) {
+      if (relatedFrontmattersWithoutCurrent.length < 2) {
+        relatedFrontmattersWithoutCurrent.push(frontmatter);
+      }
+    }
+  });
+}
+
+const recommendedByTag = relatedFrontmattersWithoutCurrent.slice(0, 2);
+const recommendedByLatest = allFrontmatters.slice(0, 2);
+---
+
+<div class="flex flex-wrap justify-center gap-8">
+  {
+    relatedFrontmattersWithoutCurrent.length > 0
+      ? recommendedByTag.map((frontmatter) => (
+          <PostSuggestion frontmatter={frontmatter} />
+        ))
+      : recommendedByLatest.map((frontmatter) => (
+          <PostSuggestion frontmatter={frontmatter} />
+        ))
+  }
+</div>

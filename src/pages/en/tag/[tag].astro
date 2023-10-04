@@ -1,0 +1,37 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { GetTags } from "../../../utils/tags";
+import TagList from "../../../components/tags/TagList.astro";
+import PostList from "../../../components/posts/PostList.astro";
+import type { Post } from "../../../types/posts";
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../post/*.md");
+
+  // Get non-duplicate tags
+  const tags = [...new Set(posts.flatMap((post) => post.frontmatter.tags))];
+
+  const paths = tags.map((tag) => ({ params: { tag: tag } }));
+  return paths;
+}
+
+const posts = await Astro.glob("../post/*.md");
+const formattedPosts = posts.map((post) => post.frontmatter);
+
+// Get tags and remove duplicates
+const tags = [...new Set(formattedPosts.map((post) => post.tags).flat())];
+
+const { tag } = Astro.params;
+
+// filter posts by tag
+const filteredPosts = formattedPosts.filter((post) => post.tags.includes(tag!));
+
+const tagObj = GetTags([tag!]);
+const title = tagObj[0].name;
+---
+
+<Layout title={`${title} Articles`}>
+  <div class="flex flex-col md:flex-row mt-10">
+    <PostList posts={filteredPosts} tagTitle={title} />
+    <TagList tagList={tags} />
+  </div>
+</Layout>

@@ -1,0 +1,15 @@
+---
+import LatestPosts from "../../components/posts/LatestPosts.astro";
+import Layout from "../../layouts/Layout.astro";
+const title = "Home Page";
+---
+
+<Layout title={title}>
+  <div class="flex mt-10">
+    <LatestPosts />
+
+    <section class="max-w-[30%] w-full">
+      <h3>Tags</h3>
+    </section>
+  </div>
+</Layout>

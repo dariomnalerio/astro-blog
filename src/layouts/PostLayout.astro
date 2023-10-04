@@ -1,0 +1,98 @@
+---
+import PostSuggestionsList from "../components/posts/PostSuggestionsList.astro";
+import PostSuggestions from "../components/posts/PostSuggestionsList.astro";
+import type { Post } from "../types/posts";
+import { FormatDate } from "../utils/date";
+import Layout from "./Layout.astro";
+
+interface Props {
+  frontmatter: Post;
+}
+
+const { frontmatter } = Astro.props;
+
+const { title, pubDate, image, author, authorLink, fileName } = frontmatter;
+
+const date = new Date(pubDate);
+const formattedDate = FormatDate(date);
+
+// Get all posts for suggestions
+const posts = await Astro.glob("..//pages/en/post/*.md");
+const allFrontmatters = posts.map((post) => post.frontmatter);
+---
+
+<Layout title={title}>
+  <div class="lg:mx-20 xl:mx-28 2xl:mx-28">
+    <div class="flex mt-12 mb-8" transition:name={fileName + pubDate}>
+      <img src={image.url} alt={image.alt} class="w-24 h-24 object-cover" />
+      <div class="ml-5 mt-2">
+        <h1 class="text-3xl">{title}</h1>
+        <time datetime={pubDate} class="text-xs">{formattedDate}.</time>
+        <a
+          href={authorLink}
+          target="_blank"
+          class="text-sky-600 text-xs ml-2 hover:underline underline-offset-2 hover:text-sky-500 hover:cursor-pointer"
+          >{author}</a
+        >
+      </div>
+    </div>
+    <div class="content">
+      <slot />
+    </div>
+  </div>
+
+  <div class="mt-20">
+    <PostSuggestionsList
+      currentFrontmatter={frontmatter}
+      allFrontmatters={allFrontmatters as Post[]}
+    />
+  </div>
+</Layout>
+
+<style>
+  .content :global(h2, h3, h4) {
+    letter-spacing: 0.5px;
+    margin: 1.5rem 0;
+    color: rgb(203 213 225);
+  }
+  .content :global(h2) {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  .content :global(h3) {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  .content :global(h4) {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .content :global(p) {
+    color: rgb(203 213 225);
+    letter-spacing: 0.3px;
+    margin: 1.5rem 0;
+  }
+
+  .content :global(pre) {
+    margin: 1.5rem 0;
+  }
+  .content :global(img) {
+    max-width: 50%;
+    height: auto;
+  }
+  .content :global(ul) {
+    list-style-type: disc;
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  .content :global(ol) {
+    list-style-type: decimal;
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  .content :global(li) {
+    color: rgb(203 213 225);
+    letter-spacing: 0.3px;
+    margin: 0.5rem 0;
+  }
+</style>

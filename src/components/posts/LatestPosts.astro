@@ -1,0 +1,27 @@
+---
+import NextIcon from "../ui/icons/NextIcon.astro";
+import PreviousIcon from "../ui/icons/PreviousIcon.astro";
+import PostSummary from "./PostSummary.astro";
+import type { LatestPostsProps as Props } from "../../types/posts.ts";
+
+const { posts, prevPage, nextPage } = Astro.props;
+---
+
+<section class="md:max-w-[70%] w-full md:mr-20">
+  <h3 class="mb-3 text-slate-100 font-semibold text-lg">Latest articles</h3>
+  {
+    posts.map((post: any) => (
+      <PostSummary
+        title={post.title}
+        pubDate={post.pubDate}
+        image={post.image}
+        fileName={post.fileName}
+      />
+    ))
+  }
+
+  <div class="flex mt-5">
+    {prevPage && <PreviousIcon href={prevPage} />}
+    {nextPage && <NextIcon href={nextPage} />}
+  </div>
+</section>
