@@ -3,7 +3,6 @@ import Layout from "../../../layouts/Layout.astro";
 import { GetTags } from "../../../utils/tags";
 import TagList from "../../../components/tags/TagList.astro";
 import PostList from "../../../components/posts/PostList.astro";
-import type { Post } from "../../../types/posts";
 export async function getStaticPaths() {
   const posts = await Astro.glob("../post/*.md");
 
@@ -27,9 +26,11 @@ const filteredPosts = formattedPosts.filter((post) => post.tags.includes(tag!));
 
 const tagObj = GetTags([tag!]);
 const title = tagObj[0].name;
+const description = `Explore articles on Dario Nalerio's blog related to the topic of ${tag}. Browse through a list of posts filtered by this tag and discover more content on software development and technology.`
+
 ---
 
-<Layout title={`${title} Articles`}>
+<Layout title={`${title} Articles`} description={description}>
   <div class="flex flex-col md:flex-row mt-10">
     <PostList posts={filteredPosts} tagTitle={title} />
     <TagList tagList={tags} />

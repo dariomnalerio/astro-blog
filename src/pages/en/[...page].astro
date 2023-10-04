@@ -3,6 +3,8 @@ import LatestPosts from "../../components/posts/LatestPosts.astro";
 import Layout from "../../layouts/Layout.astro";
 import TagList from "../../components/tags/TagList.astro";
 const title = "Dario Nalerio's Blog";
+const description =
+  "Explore Dario Nalerio's blog, where he shares his thoughts on software development and technology. Discover the latest posts and browse by tags to find articles that interest you.";
 
 export async function getStaticPaths({ paginate }: any) {
   const posts = await Astro.glob("./post/*.md");
@@ -25,7 +27,7 @@ const tagList = [...new Set(formattedPosts.map((post) => post.tags).flat())];
 const { page } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <div class="flex flex-col md:flex-row mt-10">
     <LatestPosts
       posts={page.data}

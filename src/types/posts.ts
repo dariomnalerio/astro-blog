@@ -2,6 +2,7 @@ export interface Post {
   layout: string;
   fileName: string;
   title: string;
+  description: string;
   author: string;
   authorLink: string;
   image: {

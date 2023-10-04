@@ -1,6 +1,5 @@
 ---
 import PostSuggestionsList from "../components/posts/PostSuggestionsList.astro";
-import PostSuggestions from "../components/posts/PostSuggestionsList.astro";
 import type { Post } from "../types/posts";
 import { FormatDate } from "../utils/date";
 import Layout from "./Layout.astro";
@@ -11,7 +10,7 @@ interface Props {
 
 const { frontmatter } = Astro.props;
 
-const { title, pubDate, image, author, authorLink, fileName } = frontmatter;
+const { title, pubDate, image, author, authorLink, fileName, description } = frontmatter;
 
 const date = new Date(pubDate);
 const formattedDate = FormatDate(date);
@@ -21,7 +20,7 @@ const posts = await Astro.glob("..//pages/en/post/*.md");
 const allFrontmatters = posts.map((post) => post.frontmatter);
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <div class="lg:mx-20 xl:mx-28 2xl:mx-28">
     <div class="flex mt-12 mb-8" transition:name={fileName + pubDate}>
       <img src={image.url} alt={image.alt} class="w-24 h-24 object-cover" />
@@ -31,6 +30,7 @@ const allFrontmatters = posts.map((post) => post.frontmatter);
         <a
           href={authorLink}
           target="_blank"
+          aria-label=`Visit author's (${author}) website)`
           class="text-sky-600 text-xs ml-2 hover:underline underline-offset-2 hover:text-sky-500 hover:cursor-pointer"
           >{author}</a
         >

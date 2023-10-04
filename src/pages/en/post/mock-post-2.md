@@ -2,6 +2,7 @@
 layout: "../../../layouts/PostLayout.astro"
 fileName: "mock-post-2"
 title: My Second Blog Post
+description: This is my second blog post.
 author: Dario Nalerio
 authorLink: https://www.linkedin.com/in/darionalerio/
 image:

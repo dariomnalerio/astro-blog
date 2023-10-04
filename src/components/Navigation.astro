@@ -9,6 +9,7 @@ import LinkedinIcon from "./ui/icons/LinkedinIcon.astro";
     <a
       href="/"
       class="text-lg md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo"
+      aria-label="Home page link. Goes back to latest articles."
     >
       Home
     </a>
@@ -17,7 +18,7 @@ import LinkedinIcon from "./ui/icons/LinkedinIcon.astro";
       <a
         href="/en/about/"
         class="text-slate-300 hover:scale-110 hover:duration-150 hover:text-slate-200 tracking-[1px] mt-1"
-        >About</a
+        aria-label="About page link. Learn more about me.">About</a
       >
 
       <div class="flex gap-3 md:gap-8 items-center">
@@ -30,6 +31,6 @@ import LinkedinIcon from "./ui/icons/LinkedinIcon.astro";
 
 <style>
   .logo {
-    font-family: 'Orelega One';
+    font-family: "Orelega One";
   }
 </style>

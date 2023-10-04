@@ -2,6 +2,7 @@
 layout: "../../../layouts/PostLayout.astro"
 fileName: "mock-post-3"
 title: My Favorite Programming Languages
+description: As a developer, I've worked with many programming languages over the years. Here are a few of my favorites.
 author: Dario Nalerio
 authorLink: https://www.linkedin.com/in/darionalerio/
 image:

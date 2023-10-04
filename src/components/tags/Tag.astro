@@ -16,13 +16,15 @@ const isActiveBorder = isActive ? "border-sky-700" : "border-slate-300";
 const isActiveText = isActive ? "text-sky-700" : "text-slate-300";
 ---
 
-<li
+<a
+  href=`/en/tag/${tag}`
   class={`group flex align-middle px-2 md:px-4 w-fit border-2 hover:border-sky-700 rounded-full ${isActiveBorder}`}
+  aria-label=`Navigate to ${name} tag page and view all related posts`
 >
-  <a href=`/en/tag/${tag}` class="flex gap-2 h-10 justify-center items-center">
+  <div class="flex gap-2 h-10 justify-center items-center">
     <img src={url} alt={alt} class="w-6 h-6" />
     <h4 class={`font-medium group-hover:text-sky-700 ${isActiveText}`}>
       {name}
     </h4>
-  </a>
-</li>
+  </div>
+</a>

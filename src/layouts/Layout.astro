@@ -7,8 +7,9 @@ import {ViewTransitions} from "astro:transitions";
 
 interface Props {
   title: string;
+  description: string;
 }
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,6 +18,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description}>
     <ViewTransitions />
   </head>
   <body class="bg-gradient-to-l from-[#20252C] to-[#20252D] text-slate-200">

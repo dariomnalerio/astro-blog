@@ -3,13 +3,15 @@ import PostSuggestionsList from "../../components/posts/PostSuggestionsList.astr
 import Layout from "../../layouts/Layout.astro";
 import type { Post } from "../../types/posts";
 const title = "About Me | Dario Nalerio";
+const description =
+  "Learn more about Dario Nalerio, a software developer from Uruguay, and his personal blog where he shares his thoughts on software development, things he learns along the way, and anything that piques his interest in the realm of technology and development.";
 
 // Get all posts for suggestions
 const posts = await Astro.glob("../../pages/en/post/*.md");
 const allFrontmatters = posts.map((post) => post.frontmatter);
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <h1 class="my-10 text-xl font-medium">About Me</h1>
 
   <div

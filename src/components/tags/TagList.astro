@@ -10,7 +10,7 @@ const tags = GetTags(tagList);
 
 <section class="md:max-w-[30%] w-full mt-10 md:mt-0">
   <h3 class="mb-3 text-slate-100 font-semibold text-lg">Tags</h3>
-  <ul class="flex gap-4 flex-wrap">
+  <div class="flex gap-4 flex-wrap">
     {tags.map((tag) => <Tag tag={tag} />)}
-  </ul>
+  </div>
 </section>

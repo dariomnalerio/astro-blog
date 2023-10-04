@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { notFoundGifURL } from "../config/index";
+const title = "404 Not Found"
+const description = "Oops! The page you're looking for could not be found. Check out Dario Nalerio's blog for more software development and technology-related content."
 ---
 
-<Layout title="404 Not Found">
+<Layout title={title} description={description}>
   <div class="h-[80vh] flex flex-col items-center place-content-center">
     <h1 class="text-4xl font-bold mb-2 tracking-wider">404</h1>
     <p class="text-xl font-medium mb-8">Page not found</p>

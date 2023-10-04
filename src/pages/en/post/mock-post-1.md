@@ -2,6 +2,7 @@
 layout: "../../../layouts/PostLayout.astro"
 fileName: "mock-post-1"
 title: 'My First Blog Post'
+description: 'This is my first blog post.'
 pubDate: 2022-07-01
 author: Dario Nalerio
 authorLink: https://www.linkedin.com/in/darionalerio/
