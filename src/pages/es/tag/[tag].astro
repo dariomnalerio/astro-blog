@@ -4,7 +4,6 @@ import { GetTags } from "../../../utils/tags";
 import TagList from "../../../components/tags/TagList.astro";
 import PostList from "../../../components/posts/PostList.astro";
 import { getSortedBlogPosts } from "../../../utils/contentCollections";
-import { getLangFromUrl } from "../../../i18n/utils";
 export async function getStaticPaths() {
   const posts = await getSortedBlogPosts();
 
@@ -16,8 +15,10 @@ export async function getStaticPaths() {
 }
 
 const posts = await getSortedBlogPosts();
+const spanishPosts = posts.filter((post) => post.id.includes("es"));
 
-const formattedPosts = posts.map((post) => post.data);
+
+const formattedPosts = spanishPosts.map((post) => post.data);
 
 // Get tags and remove duplicates
 const tags = [...new Set(formattedPosts.map((post) => post.tags).flat())];

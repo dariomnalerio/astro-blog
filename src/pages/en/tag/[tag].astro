@@ -16,8 +16,9 @@ export async function getStaticPaths() {
   return paths;
 }
 const posts = await getSortedBlogPosts();
+const englishPosts = posts.filter((post) => post.id.includes("en"));
 
-const formattedPosts = posts.map((post) => post.data);
+const formattedPosts = englishPosts.map((post) => post.data);
 
 // Get tags and remove duplicates
 const tags = [...new Set(formattedPosts.map((post) => post.tags).flat())];

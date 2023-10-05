@@ -1,6 +1,6 @@
 ---
 import type { TagObject as Props } from "../../types/tags.ts";
-
+import { getLangFromUrl } from "../../i18n/utils";
 const {
   tag: {
     tag,
@@ -8,6 +8,8 @@ const {
     image: { url, alt },
   },
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url)
 
 // Get the current tag from the URL and check if it matches the current tag
 const isActive = Astro.url.pathname.includes(tag);
@@ -17,7 +19,7 @@ const isActiveText = isActive ? "text-sky-700" : "text-slate-300";
 ---
 
 <a
-  href=`/en/tag/${tag}`
+  href=`/${lang}/tag/${tag}`
   class={`group flex align-middle px-2 md:px-4 w-fit border-2 hover:border-sky-700 rounded-full ${isActiveBorder}`}
   aria-label=`See ${name} related posts`
 >
