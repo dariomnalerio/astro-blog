@@ -1,6 +1,11 @@
 ---
 import GithubIcon from "../components/ui/icons/GithubIcon.astro";
 import LinkedinIcon from "./ui/icons/LinkedinIcon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="mx-10 md:mx-32 xl:mx-52 2xl:mx-80">
@@ -11,19 +16,20 @@ import LinkedinIcon from "./ui/icons/LinkedinIcon.astro";
       class="text-lg md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo"
       aria-label="Home page link. Goes back to latest articles."
     >
-      Home
+      {t("nav.home")}
     </a>
     <!-- Links and socials -->
     <div class="flex gap-3 md:gap-10">
       <a
-        href="/en/about/"
+        href=`/${lang}/about`
         class="text-slate-300 hover:scale-110 hover:duration-150 hover:text-slate-200 tracking-[1px] mt-1"
-        aria-label="About page link. Learn more about me.">About</a
+        aria-label="About page link. Learn more about me.">{t("nav.about")}</a
       >
 
       <div class="flex gap-3 md:gap-8 items-center">
         <GithubIcon />
         <LinkedinIcon />
+        <LanguagePicker />
       </div>
     </div>
   </nav>

@@ -1,6 +1,6 @@
 ---
-layout: "../../../layouts/PostLayout.astro"
 fileName: "mock-post-5"
+otherLanguageFilename: "mock-posteo-5"
 title: "10 Tips for Writing Clean and Maintainable Code"
 description: "Writing clean and maintainable code is essential for any software project. In this article, we'll share 10 tips for writing code that is easy to read, understand, and maintain."
 date: 2022-07-19

@@ -5,7 +5,6 @@ import TagList from "../../../components/tags/TagList.astro";
 import PostList from "../../../components/posts/PostList.astro";
 import { getSortedBlogPosts } from "../../../utils/contentCollections";
 import { getLangFromUrl } from "../../../i18n/utils";
-
 export async function getStaticPaths() {
   const posts = await getSortedBlogPosts();
 
@@ -15,6 +14,7 @@ export async function getStaticPaths() {
   const paths = tags.map((tag) => ({ params: { tag: tag } }));
   return paths;
 }
+
 const posts = await getSortedBlogPosts();
 
 const formattedPosts = posts.map((post) => post.data);

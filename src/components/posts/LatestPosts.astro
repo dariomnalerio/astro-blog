@@ -3,19 +3,23 @@ import NextIcon from "../ui/icons/NextIcon.astro";
 import PreviousIcon from "../ui/icons/PreviousIcon.astro";
 import PostSummary from "./PostSummary.astro";
 import type { LatestPostsProps as Props } from "../../types/posts.ts";
+import {getLangFromUrl, useTranslations} from "../../i18n/utils"
 
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 const { posts, prevPage, nextPage } = Astro.props;
 ---
 
 <section class="md:max-w-[70%] w-full md:mr-20">
-  <h3 class="mb-3 text-slate-100 font-semibold text-lg">Latest articles</h3>
+  <h3 class="mb-3 text-slate-100 font-semibold text-lg">{t("LatestPosts.h3")}</h3>
   {
-    posts.map((post: any) => (
+    posts.map((post) => (
       <PostSummary
         title={post.title}
         pubDate={post.pubDate}
         image={post.image}
         fileName={post.fileName}
+        description={post.description}
       />
     ))
   }

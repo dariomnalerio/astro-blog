@@ -7,33 +7,32 @@ const description =
   "Learn more about Dario Nalerio, a software developer from Uruguay, and his personal blog where he shares his thoughts on software development, things he learns along the way, and anything that piques his interest in the realm of technology and development.";
 import { getLangFromUrl } from "../../i18n/utils";
 
-
-// Get all posts for suggestions
 const lang = getLangFromUrl(Astro.url);
 const posts = await getSortedBlogPosts(lang);
 const allFrontmatters = posts.map((post) => post.data);
+
 ---
 
 <Layout title={title} description={description}>
-  <h1 class="my-10 text-xl font-medium">About Me</h1>
+  <h1 class="my-10 text-xl font-medium">Sobre Mi</h1>
 
   <div
     class="flex flex-col gap-4 md:max-w-[90%] lg:max-w-[80] xl:max-w-[70%] text-slate-200 tracking-wide leading-loose"
   >
     <p>
-      Hi there! I'm Dario, a software developer from Uruguay, experienced in
-      working on projects spanning both the front-end and back-end aspects of
-      web applications. I mostly work with TypeScript, but love to dive into
-      other languages and tools.
+      ¡Hola! Soy Dario, un desarrollador de software de Uruguay, con experiencia
+      en trabajar en proyectos que abarcan tanto los aspectos de front-end como
+      back-end de aplicaciones web. Mayormente trabajo con TypeScript, pero me
+      encanta adentrarme en otros lenguajes y herramientas.
     </p>
 
     <p>
-      In this blog, I'll be sharing my thoughts on software development, things
-      I learn along the way, as well as anything that piques my interest in the
-      realm of technology and development .
+      En este blog, compartiré mis reflexiones sobre el desarrollo de software,
+      cosas que aprendo en el camino, así como cualquier cosa que despierte mi
+      interés en el ámbito de la tecnología y el desarrollo.
     </p>
 
-    <p>Feel free to read some of my latest articles:</p>
+    <p>Siéntete libre de leer algunos de mis artículos más recientes:</p>
   </div>
 
   <div class="mt-20">

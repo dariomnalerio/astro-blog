@@ -27,4 +27,5 @@ export interface PostSummary {
     alt: string;
   };
   fileName: string;
+  description: string;
 }

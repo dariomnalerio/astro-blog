@@ -1,5 +1,11 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
 const { href } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
 ---
 
 <div class="flex">
@@ -23,6 +29,6 @@ const { href } = Astro.props;
         stroke-width="2"
         d="M13 5H1m0 0 4 4M1 5l4-4"></path>
     </svg>
-     Newer articles
+     {t("PreviousIcon")}
   </a>
 </div>

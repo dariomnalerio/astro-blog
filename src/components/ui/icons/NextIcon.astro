@@ -1,5 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
 const { href } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <a
@@ -7,7 +12,7 @@ const { href } = Astro.props;
   class="flex items-center justify-center px-3 h-8 mr-3 text-sm font-medium rounded-lg text-blue-400 hover:text-blue-500"
   aria-label="Display older articles"
 >
-  Older articles
+  {t("NextIcon")}
   <svg
     class="w-3.5 h-3.5 ml-2"
     aria-hidden="true"

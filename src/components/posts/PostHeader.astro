@@ -1,0 +1,35 @@
+---
+import { FormatDate } from "../../utils/date";
+
+interface Props {
+    title: string;
+    fileName: string;
+    description: string;
+    image: {
+        url: string;
+        alt: string;
+    };
+    pubDate: string;
+    authorLink: string;
+    author: string;
+}
+
+const {title, fileName, description, image, pubDate, authorLink, author} = Astro.props
+const date = new Date(pubDate);
+const formattedDate = FormatDate(date);
+---
+
+<div class="flex mt-12 mb-8" transition:name={fileName + description}>
+  <img src={image.url} alt={image.alt} class="w-24 h-24 object-cover" />
+  <div class="ml-5 mt-2">
+    <h1 class="text-3xl">{title}</h1>
+    <time datetime={pubDate} class="text-xs">{formattedDate}.</time>
+    <a
+      href={authorLink}
+      target="_blank"
+      aria-label=`Visit author's (${author}) website)`
+      class="text-sky-600 text-xs ml-2 hover:underline underline-offset-2 hover:text-sky-500 hover:cursor-pointer"
+      >{author}</a
+    >
+  </div>
+</div>

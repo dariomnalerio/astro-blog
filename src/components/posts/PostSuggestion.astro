@@ -1,13 +1,16 @@
 ---
 import type { Post } from "../../types/posts";
+import {getLangFromUrl} from "../../i18n/utils"
 interface Props {
   frontmatter: Post;
 }
+
+const lang = getLangFromUrl(Astro.url);
 const { frontmatter } = Astro.props;
 ---
 
 <a
-  href={`/en/post/${frontmatter.fileName}`}
+  href={`/${lang}/post/${frontmatter.fileName}`}
   class="group flex flex-col gap-6 items-center rounded-md w-[280px] lg:w-[300px] py-6 lg:py-10 mt-3 border-2 hover:border-sky-600"
   aria-label=`Goes to ${frontmatter.title} post`
 >

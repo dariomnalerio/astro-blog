@@ -4,20 +4,20 @@ import Layout from "../../layouts/Layout.astro";
 import TagList from "../../components/tags/TagList.astro";
 const title = "Dario Nalerio's Blog";
 import { getSortedBlogPosts } from "../../utils/contentCollections";
+import { getLangFromUrl } from "../../i18n/utils";
 const description =
   "Explore Dario Nalerio's blog, where he shares his thoughts on software development and technology. Discover the latest posts and browse by tags to find articles that interest you.";
-import { getLangFromUrl } from "../../i18n/utils";
 
 export async function getStaticPaths({ paginate }: any) {
   const posts = await getSortedBlogPosts();
-  const englishPosts = posts.filter((post) => post.id.includes("en"));
-  const postsMetadata = englishPosts.map((post) => post.data);
+  const spanishPosts = posts.filter((post) => post.id.includes("es"));
+  const postsMetadata = spanishPosts.map((post) => post.data);
 
   return paginate(postsMetadata, { pageSize: 3 });
 }
-
 const lang = getLangFromUrl(Astro.url);
 const posts = await getSortedBlogPosts(lang);
+
 const postsMetadata = posts.map((post) => post.data);
 
 // Get tags and remove duplicates
@@ -36,5 +36,4 @@ const { page } = Astro.props;
 
     <TagList tagList={tagList} />
   </div>
- 
 </Layout>

@@ -1,6 +1,6 @@
 ---
-layout: "../../../layouts/PostLayout.astro"
 fileName: "mock-post-1"
+otherLanguageFilename: "mock-posteo-1"
 title: 'My First Blog Post'
 description: 'This is my first blog post.'
 pubDate: 2022-07-01

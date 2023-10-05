@@ -1,6 +1,6 @@
 ---
-layout: "../../../layouts/PostLayout.astro"
 fileName: "mock-post-4"
+otherLanguageFilename: "mock-posteo-4"
 title: Something About CSS
 description: CSS Grid is a powerful tool for building responsive websites. In this tutorial, we'll walk through the basics of CSS Grid and show you how to use it to create a responsive website layout.
 author: Dario Nalerio

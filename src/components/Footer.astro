@@ -1,5 +1,9 @@
 ---
 import { linkedinURL, githubURL } from "../config/index.ts";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer>
@@ -7,7 +11,7 @@ import { linkedinURL, githubURL } from "../config/index.ts";
     <a
       href="mailto:dariomnalerio@gmail.com"
       class="hover:scale-105"
-      aria-label="Open email application for contact">Contacto</a
+      aria-label="Open email application for contact">{t("footer.contact")}</a
     >
     <a
       href={githubURL}

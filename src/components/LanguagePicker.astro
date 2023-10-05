@@ -1,0 +1,32 @@
+---
+import { languages } from "../i18n/ui";
+import { getEntry } from "astro:content";
+
+const URL = Astro.url.pathname;
+const parts = URL.split("/");
+let slug = parts.slice(2).join("/");
+
+// if user changes language in post, we need to update the slug
+const lang = parts[1];
+let postName = parts[3];
+const entry = `${lang}/${postName}`;
+
+if (slug.includes("post")) {
+  if (postName) {
+    const post = await getEntry("blog", entry);
+    const newPostName = post?.data.otherLanguageFilename;
+    slug = slug.replace(postName, newPostName!);
+    console.log(slug);
+  }
+}
+---
+
+<ul class="flex gap-2">
+  {
+    Object.entries(languages).map(([lang]) => (
+      <li class=" uppercase">
+        <a href={`/${lang}/${slug}`}>{lang}</a>
+      </li>
+    ))
+  }
+</ul>
