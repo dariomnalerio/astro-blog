@@ -1,10 +1,40 @@
-export function FormatDate(date: Date,) {
+interface MonthNames {
+  en: string[];
+  es: string[];
+}
 
-const monthNames = [
-  "January", "February", "March", "April",
-  "May", "June", "July", "August",
-  "September", "October", "November", "December"
-];
+export function FormatDate(date: Date, lang: "en" | "es") {
+
+  const monthNames: MonthNames = {
+    en: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    es: [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
+    ],
+  };
 
 // Get the day, month, and year components from the Date object
 const day = date.getDate();
@@ -12,7 +42,7 @@ const monthIndex = date.getMonth();
 const year = date.getFullYear();
 
 // Format the date as "day Month year"
-const formattedDate = `${day} ${monthNames[monthIndex]} ${year}`;
+const formattedDate = `${day} ${monthNames[lang][monthIndex]} ${year}`;
 
 return formattedDate;
 

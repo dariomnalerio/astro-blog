@@ -1,6 +1,6 @@
 ---
 import { FormatDate } from "../../utils/date";
-
+import { getLangFromUrl } from "../../i18n/utils";
 interface Props {
     title: string;
     fileName: string;
@@ -13,10 +13,10 @@ interface Props {
     authorLink: string;
     author: string;
 }
-
+const lang = getLangFromUrl(Astro.url)
 const {title, fileName, description, image, pubDate, authorLink, author} = Astro.props
 const date = new Date(pubDate);
-const formattedDate = FormatDate(date);
+const formattedDate = FormatDate(date, lang);
 ---
 
 <div class="flex mt-12 mb-8" transition:name={fileName + description}>

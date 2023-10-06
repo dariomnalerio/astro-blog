@@ -5,10 +5,10 @@ import { getLangFromUrl } from "../../i18n/utils";
 
 const { title, pubDate, image, fileName, description } = Astro.props;
 
-const date = new Date(pubDate);
-const formattedDate = FormatDate(date);
-
 const lang = getLangFromUrl(Astro.url);
+const date = new Date(pubDate)
+const formattedDate = FormatDate(date, lang);
+
 ---
 
 <div class="group hover:opacity-90 hover:bg-gray-600 rounded-md px-3 py-2 mt-3">

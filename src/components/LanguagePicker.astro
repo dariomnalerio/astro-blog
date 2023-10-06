@@ -16,7 +16,6 @@ if (slug.includes("post")) {
     const post = await getEntry("blog", entry);
     const newPostName = post?.data.otherLanguageFilename;
     slug = slug.replace(postName, newPostName!);
-    console.log(slug);
   }
 }
 ---
