@@ -1,13 +1,17 @@
 ---
 import PostSummary from "./PostSummary.astro";
 import type { PostSummary as PostSummaryProps } from "../../types/posts";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const { posts, tagTitle } = Astro.props;
+
+const heading = lang === "en" ? `${tagTitle} ${t("PostList.h3")}` : `${t("PostList.h3")} ${tagTitle}`;
 ---
 
 <section class="md:max-w-[70%] w-full md:mr-20">
-  <h3 class="mb-3 text-slate-100 font-semibold text-lg">{tagTitle} related articles</h3>
+  <h3 class="mb-3 text-slate-100 font-semibold text-lg">{heading}</h3>
   {
     posts.map((post: PostSummaryProps) => (
       <PostSummary

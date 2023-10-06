@@ -14,14 +14,16 @@ export const ui = {
         "TagList.h3": "Tags",
         "PreviousIcon": "Newer Articles",
         "NextIcon": "Older Articles",
+        "PostList.h3": "related articles"
     },
     es: {
         "nav.home": "Inicio",
-        "nav.about": "Acerca",
+        "nav.about": "Sobre Mi",
         "footer.contact": "Contacto",
         "LatestPosts.h3": "Últimos Artículos",
         "TagList.h3": "Tags",
         "PreviousIcon": "Artículos Recientes",
         "NextIcon": "Artículos Anteriores",
+        "PostList.h3": "Artículos sobre"
     },
 } as const;

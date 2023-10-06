@@ -42,8 +42,12 @@ const monthIndex = date.getMonth();
 const year = date.getFullYear();
 
 // Format the date as "day Month year"
-const formattedDate = `${day} ${monthNames[lang][monthIndex]} ${year}`;
-
+let formattedDate = "";
+if (lang === "en") {
+  formattedDate = `${day} ${monthNames.en[monthIndex]}, ${year}`;
+} if (lang === "es") {
+   formattedDate = `${day} de ${monthNames.es[monthIndex]}, ${year}`;
+}
 return formattedDate;
 
 }
