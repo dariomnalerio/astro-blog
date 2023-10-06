@@ -21,12 +21,16 @@ if (slug.includes("post")) {
 }
 ---
 
-<ul class="flex gap-2">
-  {
-    Object.entries(languages).map(([lang]) => (
-      <li class=" uppercase">
-        <a href={`/${lang}/${slug}`}>{lang}</a>
-      </li>
-    ))
-  }
-</ul>
+{
+  Object.entries(languages).map(
+    ([lang]) =>
+      lang !== parts[1] && (
+        <a
+          href={`/${lang}/${slug}`}
+          class="hover:scale-105 text-slate-300 uppercase font-medium"
+        >
+          {lang}
+        </a>
+      )
+  )
+}

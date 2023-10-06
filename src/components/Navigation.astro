@@ -13,16 +13,16 @@ const t = useTranslations(lang);
     <!-- Logo and home button -->
     <a
       href="/"
-      class="text-lg md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo"
+      class="text-lg md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo mt-1"
       aria-label="Home page link. Goes back to latest articles."
     >
       {t("nav.home")}
     </a>
     <!-- Links and socials -->
-    <div class="flex gap-3 md:gap-10">
+    <div class="flex">
       <a
         href=`/${lang}/about`
-        class="text-slate-300 hover:scale-110 hover:duration-150 hover:text-slate-200 tracking-[1px] mt-1"
+        class="text-slate-300 hover:scale-110 hover:duration-150 hover:text-slate-200 tracking-[1px] mt-1 mr-3 md:mr-10"
         aria-label="About page link. Learn more about me.">{t("nav.about")}</a
       >
 
@@ -31,6 +31,7 @@ const t = useTranslations(lang);
         <LinkedinIcon />
         <LanguagePicker />
       </div>
+
     </div>
   </nav>
 </header>
