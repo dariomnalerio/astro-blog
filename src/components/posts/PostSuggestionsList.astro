@@ -44,7 +44,8 @@ const recommendedByLatest = allFrontmatters.slice(0, 2);
       ? recommendedByTag.map((frontmatter: Post) => (
           <PostSuggestion frontmatter={frontmatter} />
         ))
-      : recommendedByLatest.map((frontmatter: Post) => (
+      : recommendedByLatest.length > 0 &&
+        recommendedByLatest.map((frontmatter: Post) => (
           <PostSuggestion frontmatter={frontmatter} />
         ))
   }

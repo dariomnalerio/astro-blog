@@ -1,7 +1,6 @@
 ---
 import PostLayout from "../../../layouts/PostLayout.astro";
 import { getSortedBlogPosts } from "../../../utils/contentCollections";
-import { getLangFromUrl } from "../../../i18n/utils";
 
 export async function getStaticPaths() {
   const pages = await getSortedBlogPosts();

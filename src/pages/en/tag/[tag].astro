@@ -7,7 +7,7 @@ import { getSortedBlogPosts } from "../../../utils/contentCollections";
 import { getLangFromUrl } from "../../../i18n/utils";
 
 export async function getStaticPaths() {
-  const posts = await getSortedBlogPosts();
+  const posts = await getSortedBlogPosts("en");
 
   // Get non-duplicate tags
   const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   const paths = tags.map((tag) => ({ params: { tag: tag } }));
   return paths;
 }
-const posts = await getSortedBlogPosts();
+const posts = await getSortedBlogPosts("en");
 const englishPosts = posts.filter((post) => post.id.includes("en"));
 
 const formattedPosts = englishPosts.map((post) => post.data);

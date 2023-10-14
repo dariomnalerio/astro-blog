@@ -2,16 +2,14 @@
 import PostSuggestionsList from "../../components/posts/PostSuggestionsList.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getSortedBlogPosts } from "../../utils/contentCollections";
-const title = "About Me | Dario Nalerio";
 const description =
   "Learn more about Dario Nalerio, a software developer from Uruguay, and his personal blog where he shares his thoughts on software development, things he learns along the way, and anything that piques his interest in the realm of technology and development.";
-import { getLangFromUrl } from "../../i18n/utils";
-
 
 // Get all posts for suggestions
-const lang = getLangFromUrl(Astro.url);
-const posts = await getSortedBlogPosts(lang);
+const posts = await getSortedBlogPosts("en");
+console.log({ posts });
 const allFrontmatters = posts.map((post) => post.data);
+const title = "About Me | Dario Nalerio";
 ---
 
 <Layout title={title} description={description}>

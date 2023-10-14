@@ -5,7 +5,7 @@ import TagList from "../../../components/tags/TagList.astro";
 import PostList from "../../../components/posts/PostList.astro";
 import { getSortedBlogPosts } from "../../../utils/contentCollections";
 export async function getStaticPaths() {
-  const posts = await getSortedBlogPosts();
+  const posts = await getSortedBlogPosts("es");
 
   // Get non-duplicate tags
   const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
@@ -14,9 +14,8 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const posts = await getSortedBlogPosts();
+const posts = await getSortedBlogPosts("es");
 const spanishPosts = posts.filter((post) => post.id.includes("es"));
-
 
 const formattedPosts = spanishPosts.map((post) => post.data);
 
@@ -30,7 +29,7 @@ const filteredPosts = formattedPosts.filter((post) => post.tags.includes(tag!));
 
 const tagObj = GetTags([tag!]);
 const title = tagObj[0].name;
-const description = `Explore articles on Dario Nalerio's blog related to the topic of ${tag}. Browse through a list of posts filtered by this tag and discover more content on software development and technology.`;
+const description = `Explora artículos en el blog de Dario Nalerio relacionados con el tema de ${tag}. Navega a través de una lista de publicaciones filtradas por esta etiqueta y descubre más contenido sobre desarrollo de software y tecnología.`;
 ---
 
 <Layout title={`${title} Articles`} description={description}>

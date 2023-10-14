@@ -5,7 +5,6 @@ import { getSortedBlogPosts } from "../utils/contentCollections";
 import Layout from "./Layout.astro";
 import { getLangFromUrl } from "../i18n/utils";
 
-
 const { frontmatter } = Astro.props;
 
 const { title, pubDate, image, author, authorLink, fileName, description } =
@@ -46,31 +45,43 @@ const postsMetadata = posts.map((post) => post.data);
   .content :global(h2, h3, h4) {
     letter-spacing: 0.5px;
     margin: 1.5rem 0;
-    color: rgb(203 213 225);
+    color: rgb(226, 232, 240);
   }
   .content :global(h2) {
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 2rem;
   }
   .content :global(h3) {
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-weight: 800;
+    font-size: 1.6rem;
   }
   .content :global(h4) {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.4rem;
+  }
+  .content :global(h2 + h3),
+  .content :global(h2 + h4) {
+    margin-top: 2.5rem; /* Add margin between h2 and h3/h4 */
+  }
+  .content :global(p + h2) {
+    margin-top: 2.5rem; /* Add margin between h3 and h4 */
   }
   .content :global(p) {
-    color: rgb(203 213 225);
-    letter-spacing: 0.3px;
+    color: rgb(216, 221, 228);
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
     margin: 1.5rem 0;
+  }
+  .content :global(p + p) {
+    margin-top: 0.5rem; /* Add smaller margin between two consecutive paragraphs */
   }
 
   .content :global(pre) {
-    margin: 1.5rem 0;
+    margin: 2.5rem 0;
   }
   .content :global(img) {
     max-width: 50%;
+    margin: 2rem 0;
     height: auto;
   }
   .content :global(ul) {
@@ -87,5 +98,31 @@ const postsMetadata = posts.map((post) => post.data);
     color: rgb(203 213 225);
     letter-spacing: 0.3px;
     margin: 0.5rem 0;
+  }
+
+  .content :global(a) {
+    color: rgb(46, 108, 190);
+    text-decoration: none;
+    text-underline-offset: 3px;
+  }
+  .content :global(a:hover) {
+    color: rgb(46, 108, 190);
+    text-decoration: underline;
+  }
+
+  /* Media query for smaller font size on mobile */
+  @media (max-width: 768px) {
+    .content :global(h2) {
+      font-size: 1.75rem;
+    }
+    .content :global(h3) {
+      font-size: 1.5rem;
+    }
+    .content :global(h4) {
+      font-size: 1.25rem;
+    }
+    .content :global(p) {
+      font-size: 1.1rem;
+    }
   }
 </style>

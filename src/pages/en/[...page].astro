@@ -2,14 +2,14 @@
 import LatestPosts from "../../components/posts/LatestPosts.astro";
 import Layout from "../../layouts/Layout.astro";
 import TagList from "../../components/tags/TagList.astro";
-const title = "Dario Nalerio's Blog";
+const title = "Personal Blog | Dario Nalerio";
 import { getSortedBlogPosts } from "../../utils/contentCollections";
 const description =
   "Explore Dario Nalerio's blog, where he shares his thoughts on software development and technology. Discover the latest posts and browse by tags to find articles that interest you.";
 import { getLangFromUrl } from "../../i18n/utils";
 
 export async function getStaticPaths({ paginate }: any) {
-  const posts = await getSortedBlogPosts();
+  const posts = await getSortedBlogPosts("en");
   const englishPosts = posts.filter((post) => post.id.includes("en"));
   const postsMetadata = englishPosts.map((post) => post.data);
 

@@ -9,11 +9,11 @@ const t = useTranslations(lang);
 ---
 
 <header class="mx-10 md:mx-32 xl:mx-52 2xl:mx-80">
-  <nav class="flex justify-between py-4">
+  <nav class="flex justify-between items-center py-4">
     <!-- Logo and home button -->
     <a
       href=`/${lang}/`
-      class="text-lg md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo mt-1"
+      class="text-xl font-medium md:text-2xl tracking-wider hover:scale-105 hover:delay-150 hover:duration-300 logo mt-1"
       aria-label="Home page link. Goes back to latest articles."
     >
       {t("nav.home")}
@@ -26,7 +26,7 @@ const t = useTranslations(lang);
         aria-label="About page link. Learn more about me.">{t("nav.about")}</a
       >
 
-      <div class="flex gap-3 md:gap-8 items-center">
+      <div class="flex gap-4 md:gap-8 items-center mt-1">
         <GithubIcon />
         <LinkedinIcon />
         <LanguagePicker />
