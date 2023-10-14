@@ -36,3 +36,26 @@ const { title, description } = Astro.props;
     </div>
   </body>
 </html>
+
+<style is:global>
+  /* Hide the default scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #20252c;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 0.25rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+</style>
