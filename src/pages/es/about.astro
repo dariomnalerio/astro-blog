@@ -2,7 +2,8 @@
 import PostSuggestionsList from "../../components/posts/PostSuggestionsList.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getSortedBlogPosts } from "../../utils/contentCollections";
-const description = "Conoce más sobre Dario Nalerio, un desarrollador de software de Uruguay, y su blog personal donde comparte sus reflexiones sobre el desarrollo de software, cosas que aprende en el camino, y cualquier cosa que despierte su interés en el ámbito de la tecnología y el desarrollo.";
+const description =
+  "Conoce más sobre Dario Nalerio, un desarrollador de software de Uruguay, y su blog personal donde comparte sus reflexiones sobre el desarrollo de software, cosas que aprende en el camino, y cualquier cosa que despierte su interés en el ámbito de la tecnología y el desarrollo.";
 const title = "Sobre Mi | Dario Nalerio";
 const posts = await getSortedBlogPosts("es");
 const allFrontmatters = posts.map((post) => post.data);
@@ -18,16 +19,19 @@ const allFrontmatters = posts.map((post) => post.data);
       ¡Hola! Soy Dario, un desarrollador de software de Uruguay, con experiencia
       en trabajar en proyectos que abarcan tanto los aspectos de front-end como
       back-end de aplicaciones web. Mayormente trabajo con TypeScript, pero me
-      encanta adentrarme en otros lenguajes y herramientas.
+      gusta explorar otros lenguajes y herramientas.
     </p>
 
     <p>
       En este blog, compartiré mis reflexiones sobre el desarrollo de software,
-      cosas que aprendo en el camino, así como cualquier cosa que despierte mi
-      interés en el ámbito de la tecnología y el desarrollo.
+      cosas que aprendo en el camino, así como cualquier cosa que me llame la
+      atención en el ámbito de la tecnología y el desarrollo.
     </p>
 
-    <p>Siéntete libre de leer algunos de mis artículos más recientes:</p>
+    <p>
+      No dudes en revisar algunos de los artículos que he publicado
+      recientemente:
+    </p>
   </div>
 
   <div class="mt-20">
