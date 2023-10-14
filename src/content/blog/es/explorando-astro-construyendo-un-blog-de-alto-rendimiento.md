@@ -1,7 +1,7 @@
 ---
 fileName: "explorando-astro-construyendo-un-blog-de-alto-rendimiento"
 otherLanguageFilename: "exploring-astro-building-a-high-performance-blog-website"
-title: 'Explorando Astro: Construyendo un blog de alto rendimiento'
+title: 'Explorando Astro: Construyendo un Blog de Alto Rendimiento'
 description: 'En este artículo, compartiré mi experiencia personal construyendo un blog con Astro y explicaré por qué es un framework increíble.'
 pubDate: 2023-10-14
 author: Dario Nalerio
@@ -121,7 +121,7 @@ Que luego se pueden usar así:
 
 ````
 
-### Content Collections
+### Colecciones de Contenido
 
 Una colección de contenido es un conjunto de elementos relacionados, como entradas de blog o productos. Cada elemento de contenido está representado por un archivo en un directorio, y el directorio lleva el nombre de la colección.
 
