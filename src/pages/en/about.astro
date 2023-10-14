@@ -7,7 +7,6 @@ const description =
 
 // Get all posts for suggestions
 const posts = await getSortedBlogPosts("en");
-console.log({ posts });
 const allFrontmatters = posts.map((post) => post.data);
 const title = "About Me | Dario Nalerio";
 ---

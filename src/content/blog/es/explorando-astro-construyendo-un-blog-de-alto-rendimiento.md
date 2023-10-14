@@ -37,7 +37,7 @@ Podés elegir entre varios frameworks de UI como React, Vue y Svelte, entre otro
 
 Lo bueno de las islas es que, por defecto, no generan JavaScript. Astro las convertirá a HTML a menos que sea necesario JavaScript del lado del cliente para la interactividad.
 
-## Mi experiencia con Astro
+## Mi Experiencia con Astro
 
 ### Internacionalización
 
