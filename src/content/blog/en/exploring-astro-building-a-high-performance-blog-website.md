@@ -3,7 +3,7 @@ fileName: "exploring-astro-building-a-high-performance-blog-website"
 otherLanguageFilename: "explorando-astro-construyendo-un-blog-de-alto-rendimiento"
 title: 'Exploring Astro: Building A High-Performance Blog Website'
 description: 'In this article, I will share my personal experience building a blog website with Astro and explain why it is an awesome framework.'
-pubDate: 2023-10-14
+pubDate: 2023-10-16
 author: Dario Nalerio
 authorLink: https://www.linkedin.com/in/darionalerio/
 image:
