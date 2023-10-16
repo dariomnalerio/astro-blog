@@ -163,6 +163,6 @@ Astro se destaca por su documentación, que abarca una amplia gama de informaci�
 
 ## Conclusión
 
-En esta breve exploración de las capacidades de Astro, vale la pena destacar que existen varias características, como las transition views, que contribuyen a Astro como framework de desarrollo front-end. Para profundizar más en ello, podés visitar su [sitio web oficial](https://astro.build).
+En esta breve exploración de las capacidades de Astro, vale la pena destacar que existen varias características, como las transition views y paginación, que contribuyen a Astro como framework de desarrollo front-end. Para profundizar más en ello, podés visitar su [sitio web oficial](https://astro.build).
 
 En resumen, Astro ha demostrado ser una elección excepcional para la construcción de un sitio web de blog de alto rendimiento, ofreciendo un desarrollo simplificado con su enfoque en el contenido, la eliminación automática de JavaScript y técnicas potentes de optimización de rendimiento. Sus características de internacionalización, colecciones de contenido y documentación mejoran aún más sus capacidades, convirtiéndolo en un recurso valioso para cualquier desarrollador front-end que desee crear sitios web eficientes y ricos en contenido.

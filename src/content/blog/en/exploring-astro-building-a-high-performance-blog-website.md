@@ -163,6 +163,6 @@ Astro truly stands out in its thorough documentation, encompassing a wide range 
 
 ## Conclusion
 
-In this brief exploration of Astro's capabilities, it's worth noting that there are several other powerful features, such as view transitions, that contribute to its prowess as a front-end development framework. To dive deeper into it, you can visit their their [official website](https://astro.build).
+In this brief exploration of Astro's capabilities, it's worth noting that there are several other powerful features, such as view transitions and pagination, that contribute to its prowess as a front-end development framework. To dive deeper into it, you can visit their their [official website](https://astro.build).
 
 All in all, Astro has proven to be an exceptional choice for building a high-performance blog website, offering streamlined development with its content-first approach, automatic JavaScript removal, and powerful performance optimization techniques. Its internationalization features, content collections, and comprehensive documentation further enhance its capabilities, making it a valuable asset for any front-end developer seeking to create efficient, content-rich websites.
