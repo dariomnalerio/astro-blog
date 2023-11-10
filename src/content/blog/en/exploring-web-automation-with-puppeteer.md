@@ -190,4 +190,9 @@ To visualize the script in action, here's a snapshot of a terminal running the s
 ![Terminal Running Script](https://res.cloudinary.com/dhkyj5k4o/image/upload/v1699634039/astro-blog-page/01-puppeteer-scripting/Evui1onYDv_q2bi8i.webp)
 
 ## Conclusion
+
 In conclusion, Puppeteer stands out as a versatile and powerful tool for automating various web actions. The provided script, while basic, serves as a practical demonstration of Puppeteer's application in automating Discord commands. Whether you're a seasoned developer, a meticulous tester, or an enthusiastic hobbyist, Puppeteer provides a robust and flexible solution for browser automation. Its capabilities extend beyond the presented script, making it a valuable asset in your toolkit for diverse automation tasks.
+
+**Educational Disclaimer:**
+
+The provided script and information are intended for educational purposes only. It's crucial to use such knowledge responsibly, respecting the terms of service and guidelines of the platforms involved. Unauthorized or inappropriate use of automation scripts, especially on platforms like Discord, is discouraged and may result in negative consequences.

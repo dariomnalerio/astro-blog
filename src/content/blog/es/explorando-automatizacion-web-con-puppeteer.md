@@ -193,3 +193,7 @@ Para visualizar el script en acción, aquí tienes una captura de pantalla de un
 ## Conclusión
 
 En conclusión, Puppeteer destaca como una herramienta versátil y potente para automatizar diversas acciones web. Aunque el script proporcionado es básico, sirve como una demostración práctica de la aplicación de Puppeteer para automatizar comandos en Discord. Ya seas un desarrollador experimentado, un tester meticuloso o un entusiasta aficionado, Puppeteer ofrece una solución sólida y flexible para la automatización del navegador. Sus capacidades se extienden más allá del script presentado, convirtiéndolo valiosa herramienta para diversas tareas de automatización.
+
+**Disclaimer:**
+
+El script y la información proporcionados están destinados únicamente con fines educativos. Es crucial utilizar este conocimiento de manera responsable, respetando los términos de servicio y las pautas de las plataformas involucradas. Se desaconseja el uso no autorizado o inapropiado de scripts de automatización, especialmente en plataformas como Discord, puede resultar en consecuencias negativas.
