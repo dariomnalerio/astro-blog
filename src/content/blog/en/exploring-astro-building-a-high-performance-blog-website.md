@@ -7,9 +7,9 @@ pubDate: 2023-10-16
 author: Dario Nalerio
 authorLink: https://www.linkedin.com/in/darionalerio/
 image:
-    url: 'https://docs.astro.build/assets/arc.webp'
+    url: 'https://res.cloudinary.com/dhkyj5k4o/image/upload/v1697256371/astro-blog-page/Astro_rf1qwa.webp'
     alt: 'Astro logo.'
-tags: ["astro"]
+tags: ["astro", "javascript"]
 ---
 
 Front-end development has always been a dynamic field, with new frameworks and architectures constantly emerging. In this article, I will share my personal experience building a blog website with Astro and explain why it is an awesome framework.

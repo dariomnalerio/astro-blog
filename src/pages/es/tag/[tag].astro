@@ -32,7 +32,7 @@ const title = tagObj[0].name;
 const description = `Explora artículos en el blog de Dario Nalerio relacionados con el tema de ${tag}. Navega a través de una lista de publicaciones filtradas por esta etiqueta y descubre más contenido sobre desarrollo de software y tecnología.`;
 ---
 
-<Layout title={`${title} Articles`} description={description}>
+<Layout title={`Artículos de ${title}`} description={description}>
   <div class="flex flex-col md:flex-row mt-10">
     <PostList posts={filteredPosts} tagTitle={title} />
     <TagList tagList={tags} />
