@@ -4,7 +4,7 @@ otherLanguageFilename: "exploring-web-automation-with-puppeteer"
 title: "Explorando la Automatización Web con Puppeteer
 "
 description: 'Puppeteer es una biblioteca de Node.js que proporciona una API de alto nivel para controlar Chrome/Chromium a través del Protocolo DevTools. En este artículo, exploraremos cómo usar Puppeteer para automatizar tareas en el navegador.'
-pubDate: 2023-11-11
+pubDate: 2023-11-10
 author: Dario Nalerio
 authorLink: https://www.linkedin.com/in/darionalerio/
 image:
